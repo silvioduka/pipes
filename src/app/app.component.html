@@ -1,74 +1,79 @@
-<div class="container">
-  <h3>Payment Form</h3>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="card w-50 shadow">
+      <h3 class="card-header">Simple Test Form</h3>
+      <div class="card-body">
+        <div class="row">
+          <div class="form-group col">
+            <label>Payee Name</label>
+            <input class="form-control" (input)="onNameChange($event.target.value)" type="text" />
+          </div>
 
-  <div class="row">
-    <div class="form-group col">
-      <label>Payee Name</label>
-      <input class="form-control" (input)="onNameChange($event.target.value)" type="text" />
-    </div>
+          <div class="col">
+            <label><b>Name</b></label>
+            <div>
+              {{ name | titlecase }}
+            </div>
+          </div>
+        </div>
 
-    <div class="col">
-      <label><b>Name</b></label>
-      <div>
-        {{ name | titlecase }}
+        <div class="row">
+          <div class="form-group col">
+            <label>Payment Date</label>
+            <input type="date" class="form-control" (input)="onDateChange($event.target.value)" />
+          </div>
+
+          <div class="col">
+            <label><b>Date</b></label>
+            <div>
+              {{ date | date: 'MMMM dd, yyyy.' }}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col">
+            <label>Payment Amount</label>
+            <input class="form-control" (input)="onAmountChange($event.target.value)" />
+          </div>
+
+          <div class="col">
+            <label><b>Amount</b></label>
+            <div>
+              {{ amount | currency: 'EUR'}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col">
+            <label>Height</label>
+            <input class="form-control" (input)="onHeightChange($event.target.value)" />
+          </div>
+
+          <div class="col">
+            <label><b>Height</b></label>
+            <div>
+              {{ height | number: '1.0-0'}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col">
+            <label>Miles</label>
+            <input class="form-control" (input)="onMilesChange($event.target.value)" />
+          </div>
+
+          <div class="col">
+            <label><b>Metric</b></label>
+            <div>
+              {{ miles | convert: 'cm'}}
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="form-group col">
-      <label>Payment Date</label>
-      <input type="date" class="form-control" (input)="onDateChange($event.target.value)" />
-    </div>
-
-    <div class="col">
-      <label><b>Date</b></label>
-      <div>
-        {{ date | date: 'MMMM dd, yyyy.' }}
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="form-group col">
-      <label>Payment Amount</label>
-      <input class="form-control" (input)="onAmountChange($event.target.value)" />
-    </div>
-
-    <div class="col">
-      <label><b>Amount</b></label>
-      <div>
-        {{ amount | currency: 'EUR'}}
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="form-group col">
-      <label>Height</label>
-      <input class="form-control" (input)="onHeightChange($event.target.value)" />
-    </div>
-
-    <div class="col">
-      <label><b>Height</b></label>
-      <div>
-        {{ height | number: '1.0-0'}}
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="form-group col">
-      <label>Miles</label>
-      <input class="form-control" (input)="onMilesChange($event.target.value)" />
-    </div>
-
-    <div class="col">
-      <label><b>Metric</b></label>
-      <div>
-        {{ miles | convert: 'cm'}}
-      </div>
-    </div>
-  </div>
-
 </div>
