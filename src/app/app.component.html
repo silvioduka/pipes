@@ -1,16 +1,16 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="card w-50 shadow">
-      <h3 class="card-header">Simple Test Form</h3>
+      <h3 class="card-header">Simple Test Form <small>(pipes demo)</small></h3>
       <div class="card-body">
         <div class="row">
           <div class="form-group col">
-            <label>Payee Name</label>
+            <label>Name</label>
             <input class="form-control" (input)="onNameChange($event.target.value)" type="text" />
           </div>
 
           <div class="col">
-            <label><b>Name</b></label>
+            <label><b>Name </b> <small>(titlecase pipe)</small></label>
             <div>
               {{ name | titlecase }}
             </div>
@@ -19,12 +19,12 @@
 
         <div class="row">
           <div class="form-group col">
-            <label>Payment Date</label>
+            <label>Date</label>
             <input type="date" class="form-control" (input)="onDateChange($event.target.value)" />
           </div>
 
           <div class="col">
-            <label><b>Date</b></label>
+            <label><b>Date </b> <small>(date pipe)</small></label>
             <div>
               {{ date | date: 'MMMM dd, yyyy.' }}
             </div>
@@ -33,12 +33,12 @@
 
         <div class="row">
           <div class="form-group col">
-            <label>Payment Amount</label>
+            <label>Amount</label>
             <input class="form-control" (input)="onAmountChange($event.target.value)" />
           </div>
 
           <div class="col">
-            <label><b>Amount</b></label>
+            <label><b>Amount </b> <small>(currency pipe)</small></label>
             <div>
               {{ amount | currency: 'EUR'}}
             </div>
@@ -52,7 +52,7 @@
           </div>
 
           <div class="col">
-            <label><b>Height</b></label>
+            <label><b>Height </b> <small>(number pipe)</small></label>
             <div>
               {{ height | number: '1.0-0'}}
             </div>
@@ -66,7 +66,7 @@
           </div>
 
           <div class="col">
-            <label><b>Metric</b></label>
+            <label><b>Metric </b> <small>(custom pipe)</small></label>
             <div>
               {{ miles | convert: 'cm'}}
             </div>
